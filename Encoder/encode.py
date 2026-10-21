@@ -1,6 +1,7 @@
 def encode(file):
     base64_chars = []
-    for char,item in enumerate(file):
-        if item % 3 == 0:
-            chunk = item[:3]
-
+    file = open('file.bin','rb')
+    while True:
+        chunk = file.read(3)
+        if not chunk:
+            break
