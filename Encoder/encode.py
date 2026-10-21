@@ -5,3 +5,6 @@ def encode(file):
         chunk = file.read(3)
         if not chunk:
             break
+
+    file.close()
+    file = open('file.txt', 'w')
