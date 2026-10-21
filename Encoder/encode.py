@@ -1,1 +1,2 @@
-print("hi")
+def encode(file):
+
