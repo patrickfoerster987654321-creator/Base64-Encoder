@@ -8,3 +8,7 @@ def encode(file):
 
     file.close()
     file = open('file.txt', 'w')
+    chunk1 = chunk >> 18
+    chunk2 = chunk >> 12
+    chunk3 = chunk >> 6
+    chunk4 = chunk
