@@ -18,3 +18,5 @@ def encode(file):
             chunk[chunk3],
             chunk[chunk4]
             )
+    file.write(output)
+    file.close()
