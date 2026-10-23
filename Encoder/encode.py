@@ -1,17 +1,15 @@
 def encode(file):
     base64_chars = []
     file = open(file,'rb')
-    file2 = open('file.txt', 'w')
+    file2 = open('file.txt', 'a')
     b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     while True:
         chunk = file.read(3)
         if not chunk:
             break
         num_bytes = len(chunk)
-        if num_bytes < 3:
-            chunk_int = int.from_bytes(padded_chunk + b'\x00' * (3-num_bytes), 'big')
-        else:
-            chunk_int = int.from_bytes(padded_chunk, 'big')
+        padded_chunk = chunk + b'\x00' * (3-num_bytes)
+        chunk_int = int.from_bytes(padded_chunk, 'big')
 
     chunk1 = (chunk_int >> 18) & 0x3F
     chunk2 = (chunk_int >> 12) & 0x3F
