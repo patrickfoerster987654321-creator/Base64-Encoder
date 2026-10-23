@@ -7,7 +7,7 @@ def encode(file):
             break
 
     file.close()
-    file = open('file.txt', 'w')
+    file2 = open('file.txt', 'w')
     chunk1 = (chunk >> 18) & 0x3F
     chunk2 = (chunk >> 12) & 0x3F
     chunk3 = (chunk >> 6) & 0x3F
@@ -18,5 +18,5 @@ def encode(file):
             chunk[chunk3],
             chunk[chunk4]
             )
-    file.write(output)
-    file.close()
+    file2.write(output)
+    file2.close()
