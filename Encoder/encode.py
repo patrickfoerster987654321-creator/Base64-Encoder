@@ -8,7 +8,7 @@ def encode(file):
         chunk_int = int.from_bytes(chunk, 'big')
 
     file.close()
-    file = open('file.txt', 'w')
+    file2 = open('file.txt', 'w')
     chunk1 = (chunk_int >> 18) & 0x3F
     chunk2 = (chunk_int >> 12) & 0x3F
     chunk3 = (chunk_int >> 6) & 0x3F
