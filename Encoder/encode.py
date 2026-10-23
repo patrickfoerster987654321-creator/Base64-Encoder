@@ -9,15 +9,20 @@ def encode(file):
             break
         num_bytes = len(chunk)
         if num_bytes < 3:
-            chunk_int = int.from_bytes(chunk + b'\x00' * (3-num_bytes), 'big')
+            chunk_int = int.from_bytes(padded_chunk + b'\x00' * (3-num_bytes), 'big')
         else:
-            chunk_int = int.from_bytes(chunk, 'big')
+            chunk_int = int.from_bytes(padded_chunk, 'big')
 
     chunk1 = (chunk_int >> 18) & 0x3F
     chunk2 = (chunk_int >> 12) & 0x3F
     chunk3 = (chunk_int >> 6) & 0x3F
     chunk4 = chunk_int & 0x3F
-    output = f"{chunk1}{chunk2}{chunk3}{chunk4}"
+    output = (
+            b64_alphabet[chunk1] +
+            b64_alphabet[chunk2] +
+            b64_alphabet[chunk3] +
+            b64_alphabet[chunk4]
+            )
     file2.write(output)
 
     file.close()
