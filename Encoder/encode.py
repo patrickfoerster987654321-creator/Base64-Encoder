@@ -23,5 +23,9 @@ def encode(file):
             )
     file2.write(output)
 
+    
+
+
+
     file.close()
     file2.close()
