@@ -1,6 +1,6 @@
 def encode(file):
     base64_chars = []
-    file = open('file','rb')
+    file = open(file,'rb')
     while True:
         chunk = file.read(3)
         if not chunk:
