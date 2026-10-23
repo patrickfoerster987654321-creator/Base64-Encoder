@@ -1,7 +1,7 @@
-def encode(file):
+def encode(in_file, out_file):
     base64_chars = []
-    file = open(file,'rb')
-    file2 = open('file.txt', 'w', encoding = 'ascii')
+    file = open(in_file,'rb')
+    file2 = open(out_file, 'w', encoding = 'ascii')
     b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     while True:
         chunk = file.read(3)
