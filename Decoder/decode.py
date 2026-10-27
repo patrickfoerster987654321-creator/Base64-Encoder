@@ -1,8 +1,11 @@
 def decode(txt):
     file = open(f'{txt}', 'r')
-    file2 = open('thing.png', 'w')
+    encoded_data = file.read().replace('\n','').replace('\r','').strip()
+    file2 = open('thing.png', 'wb')
     b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     while True:
+        indices = []
+        i = 0
         chunk = file.readline()
         if not chunk:
             break
