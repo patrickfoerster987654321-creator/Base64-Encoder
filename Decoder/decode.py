@@ -11,6 +11,13 @@ def decode(txt):
             if char != '=':
                 indices.append(b64_alphabet.index(char))
             i += 1
+        byte_list = bytearray()
+        index = 0
+        while index < len(indices):
+            b1 = indices[index]
+            b2 = indices[index + 1]
+            b3 = indices[index + 2]
+            b4 = indices[index + 3]
         file2.write(output)
 
 
