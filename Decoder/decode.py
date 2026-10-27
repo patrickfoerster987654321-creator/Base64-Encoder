@@ -18,6 +18,9 @@ def decode(txt):
             b2 = indices[index + 1]
             b3 = indices[index + 2]
             b4 = indices[index + 3]
+
+        three_bytes = (b1 << 18) + (b2 << 12) + (b3 << 6) + b4
+        byte_list.append((triple >> 16) & 0xFF)
         file2.write(output)
 
 
