@@ -6,9 +6,9 @@ def decode(txt):
         chunk = file.read(4)
         if not chunk:
             break
-        chunk1 = (chunk.index(b64_alphabet) << 18) & 0x3F
-        chunk2 = (chunk.index(b64_alphabet) << 12) & 0x3F
-        chunk3 = (chunk.index(b64_alphabet) << 6) & 0x3F
+        chunk1 = (b64_alphabet.index(chunk) << 18) & 0x3F
+        chunk2 = (b64_alphabet.index(chunk) << 12) & 0x3F
+        chunk3 = (b64_alphabet.index(chunk) << 6) & 0x3F
         output = (
                 chunk1,
                 chunk2,
