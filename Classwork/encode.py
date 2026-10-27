@@ -5,7 +5,7 @@ def encode(s):
       >>> encode("ABCDEFG")
       [0, 1, 2, 3, 4, 5, 6]
       >>> encode("abcdefg")
-      [26, 27, 28, 29, 30, 31]
+      [26, 27, 28, 29, 30, 31, 32]
       >>> encode("12345")
       [53, 54, 55, 56, 57]
     """
@@ -13,9 +13,10 @@ def encode(s):
     index_list = []
     for char in s:
         if char in b64_alphabet:
-            i = b64_alphabet[char]
+            i = b64_alphabet.index(char)
             index_list.append(i)
 
+    return index_list
 
 if __name__ == '__main__':
     import doctest
