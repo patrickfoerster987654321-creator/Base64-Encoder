@@ -9,3 +9,7 @@ def decode(nums):
       >>> decode([53, 54, 55, 56, 57])
       '12345'
     """
+    b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+    for item in nums:
+
+
