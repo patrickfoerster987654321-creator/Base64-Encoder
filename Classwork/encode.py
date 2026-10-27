@@ -15,3 +15,8 @@ def encode(s):
         if char in b64_alphabet:
             i = b64_alphabet[char]
             index_list.append(i)
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
