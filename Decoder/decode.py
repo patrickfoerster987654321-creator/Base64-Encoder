@@ -6,13 +6,11 @@ def decode(txt):
     while True:
         indices = []
         i = 0
-        chunk = file.readline()
-        if not chunk:
-            break
-        chunk = b64_alphabet.index(chunk)
-        output = (
-                chunk
-                )
+        while i < len(encoded_data):
+            char = encoded_data[i]
+            if char != '=':
+                indices.append(b64_alphabet.index(char))
+            i += 1
         file2.write(output)
 
 
