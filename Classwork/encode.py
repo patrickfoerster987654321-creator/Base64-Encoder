@@ -9,4 +9,6 @@ def encode(s):
       >>> encode("12345")
       [53, 54, 55, 56, 57]
     """
+    b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+    for char in s:
 
