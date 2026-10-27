@@ -1,5 +1,4 @@
 def encode(in_file):
-    base64_chars = []
     file = open(in_file,'rb')
     file2 = open(f'{in_file}_embedded.txt', 'w')
     b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
