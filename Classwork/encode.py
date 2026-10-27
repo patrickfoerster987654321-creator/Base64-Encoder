@@ -11,4 +11,3 @@ def encode(s):
     """
     b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     for char in s:
-
