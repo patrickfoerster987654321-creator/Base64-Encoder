@@ -13,4 +13,5 @@ def encode(s):
     index_list = []
     for char in s:
         if char in b64_alphabet:
-            index_list.append(char)
+            i = b64_alphabet[char]
+            index_list.append(i)
