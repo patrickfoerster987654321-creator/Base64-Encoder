@@ -10,6 +10,8 @@ def decode(nums):
       '12345'
     """
     b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+    b64_list = []
     for item in nums:
+        b64_list.append(b64_alphabet.chr(item))
 
-
+    return b64_list
