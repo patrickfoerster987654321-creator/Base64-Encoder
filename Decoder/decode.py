@@ -21,7 +21,14 @@ def decode(txt):
 
         three_bytes = (b1 << 18) + (b2 << 12) + (b3 << 6) + b4
         byte_list.append((triple >> 16) & 0xFF)
-        file2.write(output)
+        if index + 2 < len(indices):
+            byte_list.append((triple >> 8) & 0xFF)
+        if index + 3 < len(indices):
+            byte_list.append(triple & 0xFF)
+
+
+        index += 4
+        file2.write(bytes(byte_list))
 
 
 
