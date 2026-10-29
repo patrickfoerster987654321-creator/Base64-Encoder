@@ -1,7 +1,7 @@
 def decode(txt):
     file = open(f'{txt}', 'r')
     encoded_data = file.read().replace('\n','').replace('\r','').strip()
-    file2 = open('thing.png', 'wb')
+    file2 = open('', 'wb')
     b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     indices = []
     padding_count = encoded_data.count('=')
