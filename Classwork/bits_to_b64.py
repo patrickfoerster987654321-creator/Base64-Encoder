@@ -11,7 +11,7 @@ def bits_to_base64(bitstr):
       >>> s = '100111010110100101010011010111100111011110001110110101110011011'
       >>> result = bits_to_base64(s)
       >>> result
-      'nWlTXneO1zD'
+      'nWlTXneO1zY'
       >>> s2 = '10110101100010110011010101010110111100011101101011100101'
       >>> result2 = bits_to_base64(s2)
       >>> result2
