@@ -1,7 +1,12 @@
-def decode(txt):
-    file = open(f'{txt}', 'r')
+from pathlib import Path
+
+def decode(file_path):
+    file = open(f'{file_path}', 'r')
     encoded_data = file.read().replace('\n','').replace('\r','').strip()
-    file2 = open('', 'wb')
+
+    filename_two = Path(file_path).stem
+
+    file2 = open(f'{filename_two}', 'wb')
     b64_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     indices = []
     padding_count = encoded_data.count('=')
