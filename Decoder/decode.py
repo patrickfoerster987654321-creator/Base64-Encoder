@@ -17,7 +17,7 @@ def decode(file_path):
         elif char == '=':
             indices.append(0)
 
-    byte_list = bytearray()
+    byte_list = []
     index = 0
     while index < len(indices):
         b1 = indices[index]
