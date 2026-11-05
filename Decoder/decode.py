@@ -1,7 +1,12 @@
+import sys
 from pathlib import Path
 
 def decode(file_path):
-    file = open(f'{file_path}', 'r')
+    try:
+        file = open(f'{file_path}', 'r')
+    except FileNotFoundError:
+        print(f"Error: The file '{file_path}' does not exist.")
+        sys.exit(1)
     encoded_data = file.read().replace('\n','').replace('\r','').strip()
 
     filename_two = Path(file_path).stem
@@ -45,3 +50,12 @@ def decode(file_path):
 
     file.close()
     file2.close()
+    return filename_two
+
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print(f'Usage: {sys.argv[0]} FILE')
+        sys.exit(1)
+
+    outname = encode(sys.argv[1])
+    print(f'Wrote {outname}')
