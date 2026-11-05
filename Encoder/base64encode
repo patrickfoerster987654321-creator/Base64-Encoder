@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+import sys
+from encode import encode
+
+if len(sys.argv) != 2:
+    print(f'Usage: {sys.argv[0]} FILE')
+    sys.exit(1)
+
+outname = encode(sys.argv[1])
+print(f'Wrote {outname}')
